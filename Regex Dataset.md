@@ -543,3 +543,42 @@ apiVersion:\s*batch/v1beta1\s+kind:\s*CronJob\s+metadata:\s+(?:name:\s*[a-zA-Z0-
 arn:aws:s3:::xxx/(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((\?|/)|7)|')|;)|\+)|3)|\#)|=)|-)|5)|%)|9)|\))|1)|!)|>)|\.)|6)|\&)|:)|\*)|2)|\")|<)|,)|4)|$)|8)|\()|0)| )|_)|O)|W)|G)|\[)|K)|S)|C)|\])|M)|U)|E)|Y)|I)|Q)|A)|^)|N)|V)|F)|Z)|J)|R)|B)|\\)|L)|T)|D)|X)|H)|P)|\@)|o)|g)|k)|c)|m)|e)|i)|a)|n)|f)|j)|b)|l)|d)|h)|`)|w)|s)|u)|q)|v)|r)|t)|p)|\{)|y)|z)|x)|\})|\|)|\~))*
 
 ```
+78. **Representing allowed requests within an access control policy**
+
+```
+(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((\?|/)|7)|')|;)|\+)|3)|\#)|=)|-)|5)|%)|9)|\))|1)|!)|>)|\.)|6)|\&)|:)|\*)|2)|\"")|<)|,)|4)|$)|8)|\()|0)| )|_)|O)|W)|G)|\[)|K)|S)|C)|\])|M)|U)|E)|Y)|I)|Q)|A)|^)|N)|V)|F)|Z)|J)|R)|B)|\\)|L)|T)|D)|X)|H)|P)|\@)|o)|g)|k)|c)|m)|e)|i)|a)|n)|f)|j)|b)|l)|d)|h)|`)|w)|s)|u)|q)|v)|r)|t)|p)|\{)|y)|z)|x)|\})|\|)|\~))*
+
+```
+
+79. **Representing allowed requests within an access control policy**
+
+```
+arn:aws:ec2:us-east-1:(:image/ami-|1234123412(43:instance/|34:((key-pair|s(ubnet|ecurity-group))/|(volum|network-interfac)e/)))(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((\?|/)|7)|')|;)|\+)|3)|\#)|=)|-)|5)|%)|9)|\))|1)|!)|>)|\.)|6)|\&)|:)|\*)|2)|\")|<)|,)|4)|$)|8)|\()|0)| )|_)|O)|W)|G)|\[)|K)|S)|C)|\])|M)|U)|E)|Y)|I)|Q)|A)|^)|N)|V)|F)|Z)|J)|R)|B)|\\)|L)|T)|D)|X)|H)|P)|\@)|o)|g)|k)|c)|m)|e)|i)|a)|n)|f)|j)|b)|l)|d)|h)|`)|w)|s)|u)|q)|v)|r)|t)|p)|\{)|y)|z)|x)|\})|\|)|\~))*
+
+```
+
+80. **Representing allowed requests within an access control policy**
+
+```
+arn:aws:s3:::billing(|/(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((\?|/)|7)|')|;)|\+)|3)|\#)|=)|-)|5)|%)|9)|\))|1)|!)|>)|\.)|6)|\&)|:)|\*)|2)|\")|<)|,)|4)|$)|8)|\()|0)| )|_)|O)|W)|G)|\[)|K)|S)|C)|\])|M)|U)|E)|Y)|I)|Q)|A)|^)|N)|V)|F)|Z)|J)|R)|B)|\\)|L)|T)|D)|X)|H)|P)|\@)|o)|g)|k)|c)|m)|e)|i)|a)|n)|f)|j)|b)|l)|d)|h)|`)|w)|s)|u)|q)|v)|r)|t)|p)|\{)|y)|z)|x)|\})|\|)|\~))*)
+
+```
+
+81. **Representing allowed requests within an access control policy**
+
+```
+arn:aws:s3:::example/(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((\?|/)|7)|')|;)|\+)|3)|\#)|=)|-)|5)|%)|9)|\))|1)|!)|>)|\.)|6)|\&)|:)|\*)|2)|\")|<)|,)|4)|$)|8)|\()|0)| )|_)|O)|W)|G)|\[)|K)|S)|C)|\])|M)|U)|E)|Y)|I)|Q)|A)|^)|N)|V)|F)|Z)|J)|R)|B)|\\)|L)|T)|D)|X)|H)|P)|\@)|o)|g)|k)|c)|m)|e)|i)|a)|n)|f)|j)|b)|l)|d)|h)|`)|w)|s)|u)|q)|v)|r)|t)|p)|\{)|y)|z)|x)|\})|\|)|\~))*
+
+```
+82. **Language of strings over {a, b} that contain an even number of 'a's AND an even number of 'b's.**
+
+```
+((aa)*(bb)*)* | ((aa)*(bb)*)*(ab(aa)*(bb)*ba(aa)*(bb)*)*
+
+```
+83. **Strings that start with user_ followed by zero or more characters from a specific allowed set, which includes alphanumeric characters, underscores, hyphens, dots, and a selection of punctuation marks.**
+
+```
+user_([a-zA-Z0-9._\-+=%*!~]|\?|\/|'|;|\#|=|\$|\(|\)|\&|:|\||\{|\}|\[|\]|<|>|,|\ )*
+
+```

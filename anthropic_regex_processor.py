@@ -366,14 +366,36 @@ def main():
     print(f"Found {len(regexes)} regexes in {markdown_file}")
     print(f"Using Claude 3.7 Sonnet in {mode_str}")
     
-    # Get starting index from command line or prompt if not provided
-    start_index = args.start_index - 1  # Convert to 0-based index
+    # Get default starting index from command line
+    suggested_index = args.start_index
+    
+    # Display available regexes and ask which to process
+    print("\nAvailable regex patterns:")
+    for i, name in enumerate(names):
+        print(f"  {i+1}. {name}")
+    
+    print(f"\nSuggested starting index: {suggested_index}")
+    print("Enter the regex index to process (or press Enter to use the suggested index):")
+    user_input = input("> ").strip()
+    
+    if user_input:
+        try:
+            start_index = int(user_input) - 1  # Convert to 0-based index
+        except ValueError:
+            print(f"Invalid input. Using suggested index {suggested_index} instead.")
+            start_index = suggested_index - 1
+    else:
+        start_index = suggested_index - 1
+    
+    # Validate index bounds
     if start_index < 0:
         start_index = 0
+        print(f"Index too small. Starting from first regex (index 1).")
     if start_index >= len(regexes):
         start_index = len(regexes) - 1
+        print(f"Index too large. Starting from last regex (index {len(regexes)}).")
     
-    print(f"Starting from regex #{start_index + 1}")
+    print(f"\nStarting from regex #{start_index + 1}: {names[start_index]}")
     
     # Process each regex
     success_count = 0

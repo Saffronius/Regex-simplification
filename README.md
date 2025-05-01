@@ -10,6 +10,7 @@ This tool leverages Claude 3.7 Sonnet to simplify complex regular expressions wh
 - Support for thinking mode (showing Claude's reasoning)
 - Generate detailed reports of simplification results
 - Process individual or batches of regex patterns
+- Interactive regex selection
 
 ## Prerequisites
 
@@ -66,6 +67,16 @@ Start from a specific regex:
 ```
 python anthropic_regex_processor.py --start-index 5
 ```
+
+## Interactive Regex Selection
+
+When you run the program, it will:
+1. Display all available regex patterns with their indices
+2. Show the suggested starting index (from command line or default)
+3. Prompt you to enter a specific regex index to process
+4. Allow you to press Enter to use the suggested index
+
+This gives you the flexibility to choose any regex pattern regardless of the command-line parameters.
 
 ## Input Format
 
