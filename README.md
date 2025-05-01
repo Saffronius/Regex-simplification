@@ -97,6 +97,8 @@ The tool generates two report files:
 1. `regex_simplification_report.md`: Basic report with original regex, simplified regex, and statistics
 2. `regex_simplification_detailed_report.md`: Enhanced report including Claude's thinking process
 
+Reports are appended to the files rather than overwritten, with each run clearly marked with a timestamp. This allows you to maintain a history of all simplification attempts.
+
 ## ABC Validation
 
 The tool uses ABC to validate that the simplified regex matches exactly the same strings as the original. The validation calculates:

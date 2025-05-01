@@ -323,21 +323,29 @@ def main():
     use_thinking = not args.no_thinking
     mode_str = "standard mode" if not use_thinking else "thinking mode"
     
-    # Initialize report files
+    # Generate timestamp for this run
     timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
     
-    # Regular report
-    with open(report_file, 'w', encoding='utf-8') as f:
-        f.write("# Regex Simplification Report\n\n")
-        f.write(f"This report contains the results of simplifying complex regular expressions using Claude 3.7 Sonnet ({mode_str}).\n\n")
-        f.write(f"Generated on: {timestamp}\n\n")
+    # Check if report files exist and handle accordingly
+    report_exists = os.path.exists(report_file)
+    detailed_report_exists = os.path.exists(detailed_report_file)
+    
+    # Regular report - append if exists, create with headers if new
+    with open(report_file, 'a', encoding='utf-8') as f:
+        if not report_exists:
+            f.write("# Regex Simplification Report\n\n")
+        
+        # Always add a section header for this run
+        f.write(f"\n\n## Run: {timestamp} (Claude 3.7 Sonnet {mode_str})\n\n")
         f.write("-"*80 + "\n")
     
-    # Detailed report with thinking
-    with open(detailed_report_file, 'w', encoding='utf-8') as f:
-        f.write("# Regex Simplification Detailed Report\n\n")
-        f.write(f"This report contains the results of simplifying complex regular expressions using Claude 3.7 Sonnet ({mode_str}), including thinking processes.\n\n")
-        f.write(f"Generated on: {timestamp}\n\n")
+    # Detailed report with thinking - append if exists, create with headers if new
+    with open(detailed_report_file, 'a', encoding='utf-8') as f:
+        if not detailed_report_exists:
+            f.write("# Regex Simplification Detailed Report\n\n")
+        
+        # Always add a section header for this run
+        f.write(f"\n\n## Run: {timestamp} (Claude 3.7 Sonnet {mode_str})\n\n")
         f.write("-"*80 + "\n")
     
     # Check if markdown file exists
